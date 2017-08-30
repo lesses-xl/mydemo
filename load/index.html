@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面加载动画</title>
+	<style type="text/css">
+		.show {
+			width: 400px;
+			height: 200px;
+			margin: 150px auto;
+		}
+
+		button {
+			width: 170px;
+			outline: none;
+			background: lightblue;
+			border: 1px solid gray;
+			margin: 10px;
+			cursor: pointer;
+			transition: all .3s;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		button:hover {
+			background: skyblue;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			padding: 5px 0;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="show">
+		<button><a target=_blank href="http://lesses.me/mydemo/load/one">使用定时器</a></button>
+		<button><a target=_blank href="http://lesses.me/mydemo/load/two">gif动画</a></button>
+		<button><a target=_blank href="http://lesses.me/mydemo/load/three">CSS3动画</a></button>
+		<button><a target=_blank href="http://lesses.me/mydemo/load/four">顶部滚动条</a></button>
+		<button><a target=_blank href="http://lesses.me/mydemo/load/five">百分比加载</a></button>
+	</div>
+	
+</body>
+</html>

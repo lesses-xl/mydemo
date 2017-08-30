@@ -4,3 +4,4 @@
 *  hellola
 *  drawpol
 *  maze
+*  load
