@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo合集</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo {
+            width: 1120px;
+            height: auto;
+            margin: 10% auto;
+            display: flex;
+            flex-flow: row wrap;
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+
+        .demo-list {
+            width: 250px;
+            height: 180px;
+            border-radius: 5px;
+            background-color: rgb(112, 195, 255);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            /* line-height: 90px; */
+            position: relative;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 15px;
+            transition: all .3s ease;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .demo-list:nth-of-type(2) {
+            background-color: rgb(253, 106, 127);
+        }
+
+        .demo-list:nth-of-type(3) {
+            background-color: rgb(127, 142, 160);
+        }
+
+        .demo-list:nth-of-type(4) {
+            background-color: rgb(137, 208, 79);
+        }
+
+        .demo-list:nth-of-type(5) {
+            background-color: rgb(127, 142, 160);
+        }
+
+        .demo-list:nth-of-type(6) {
+            background-color: rgb(137, 208, 79);
+        }
+
+        .demo-list:nth-of-type(7) {
+            background-color: rgb(112, 195, 255);
+        }
+
+        .demo-list:nth-of-type(2) {
+            background-color: rgb(253, 106, 127);
+        }
+
+        .demo-list:hover {
+            box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .5);
+            top: -5px;
+        }
+
+        .demo-list:hover .light {
+            transition: all .5s ease;
+            left: 100%;
+        }
+
+        .demo-list a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .light {
+            cursor: pointer;
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, 0));
+            transform: skewx(-25deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="demo">
+
+        <div class="demo-list">
+            <i class="light"></i>
+            <h3>基于css3的图片轮播</h3>
+            <a target="_blank" href="http://nightess.github.io/mydemo/carousel"></a>
+        </div>
+        <div class="demo-list">
+            <i class="light"></i>
+            <h3>仿finalfour网站</h3>
+            <a target="_blank" href="http://nightess.github.io/mydemo/finalfour"></a>
+        </div>
+        <div class="demo-list">
+            <i class="light"></i>
+            <h3>仿hellola网站</h3>
+            <a target="_blank" href="http://nightess.github.io/mydemo/hellola"></a>
+        </div>
+        <div class="demo-list">
+            <i class="light"></i>
+            <h3>canvas小demo</h3>
+            <a target="_blank" href="http://nightess.github.io/mydemo/drawpol"></a>
+        </div>
+        <div class="demo-list">
+            <i class="light"></i>
+            <h3>迷宫生成</h3>
+            <a target="_blank" href="http://nightess.github.io/mydemo/maze"></a>
+        </div>
+        <div class="demo-list">
+            <i class="light"></i>
+            <h3>加载动画</h3>
+            <a target="_blank" href="http://nightess.github.io/mydemo/load"></a>
+        </div>
+        <div class="demo-list">
+            <i class="light"></i>
+            <h3>延迟加载</h3>
+            <a target="_blank" href="http://nightess.github.io/mydemo/noDelayMenu"></a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
