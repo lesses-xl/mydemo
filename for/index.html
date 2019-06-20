@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			border: 2px solid lightblue;
+			padding: 20px;
+			display: flex;
+			margin: 10px;
+		}
+
+		.tree {
+			display: flex;
+		}
+
+		.main {
+			width: 1530px;
+		}
+
+		.search {
+			text-align: center;
+			width: 510px;
+			margin: 0 auto;
+			display: block;
+		}
+
+		input {
+			background: white;
+			border: 1px solid skyblue;
+			outline: none;
+			padding: 5px;
+			cursor: pointer;
+		}
+
+		.text {
+			height: 16px;
+			cursor: text;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		世界
+		<div class="tree">
+			三次元
+			<div>人类</div>
+			好人
+			<div>动物</div>
+			柴犬
+			<div>建筑</div>
+			<div>植物</div>
+		</div>
+
+		<div class="tree">
+			二次元
+			<div>火影</div>
+			鸣人
+			<div>妖尾</div>
+			露西
+			<div>海贼王</div>
+		</div>
+
+		<div class="tree">
+			宇宙
+			<div>地球</div>
+			<div>太阳</div>
+			<div>月球</div>
+			登月
+		</div>
+		天地
+	</div>
+	<label class="search">
+		<input type="button" name="" value="前序遍历">
+		<input type="button" name="" value="后序遍历">
+		<input type="text" name="" class="text">
+		<input type="button" name="" value="前序查询">
+		<input type="button" name="" value="后序查询">
+	</label>
+	
+
+	<script type="text/javascript">
+		var oDivs = [];
+		var divs = document.getElementsByTagName('div');
+		var btns = document.getElementsByTagName('input');
+
+		//前序遍历
+		function pre(node) {
+			if(node != null) {
+				oDivs.push(node);
+				for(let i=0; i<node.children.length; i++) {
+					pre(node.children[i]);
+				}
+			}
+		}
+
+		//后序遍历
+		function back(node) {
+			if(node != null) {
+				for(let i=0; i<node.children.length; i++) {
+					back(node.children[i]);
+				}
+				oDivs.push(node);
+			}
+		}
+
+		btns[0].onclick = function() {
+			oDivs = [];
+			pre(divs[0]);
+			var i = 0;
+			function onepre() {
+				if(oDivs[i-1]) {
+					oDivs[i-1].style.backgroundColor = 'white';
+				}
+				if(i == oDivs.length) {
+					clearInterval(timer1);
+					return false;
+				}
+				oDivs[i].style.backgroundColor = 'skyblue';
+				i++;
+			}
+			var timer1 = setInterval(onepre,500);
+		}
+
+		btns[1].onclick = function() {
+			oDivs = [];
+			back(divs[0]);
+			var i = 0;
+			function oneback() {
+				if(oDivs[i-1]) {
+					oDivs[i-1].style.backgroundColor = 'white';
+				}
+				if(i == oDivs.length) {
+					clearInterval(timer2);
+					return false;
+				}
+				oDivs[i].style.backgroundColor = 'skyblue';
+				i++;
+			}
+
+			var timer2 = setInterval(oneback,500);
+		}
+
+		btns[3].onclick = function() {
+			oDivs = [];
+			pre(divs[0]);
+			var i = 0;
+			var searched = 0;
+			function onpre() {
+				if(oDivs[i-1] && oDivs[i-1].style.backgroundColor == 'skyblue') {
+					oDivs[i-1].style.backgroundColor = 'white';
+				}
+				if(i == oDivs.length) {
+					clearInterval(timer3);
+					if(searched == 0) {
+						alert('无结果');
+					}
+					return false;
+				}
+
+				oDivs[i].style.backgroundColor = 'skyblue';
+				if (oDivs[i].firstChild&&btns[2].value&&oDivs[i].firstChild.nodeValue.indexOf(btns[2].value) > -1) {
+				  oDivs[i].style.backgroundColor = 'red';
+				  searched = 1;
+				}
+				i++;
+			}
+
+			var timer3 = setInterval(onpre,500);
+		}
+
+		btns[4].onclick = function() {
+			oDivs = [];
+			back(divs[0]);
+			var i = 0;
+			var searched = 0;
+			function onback(){           //显示单个数组元素
+			  if (oDivs[i-1] && oDivs[i-1].style.backgroundColor == 'blue') {
+			    oDivs[i-1].style.backgroundColor = 'white';
+			  }
+			  if (i == oDivs.length) {
+			    clearInterval(timer4);
+			    if (searched == 0) {
+			      alert('无结果');
+			    }
+			    return false;
+			  }
+			  oDivs[i].style.backgroundColor = 'blue';
+			  if (oDivs[i].firstChild&&btns[2].value&&oDivs[i].firstChild.nodeValue.indexOf(btns[2].value) > -1) {
+			    oDivs[i].style.backgroundColor = 'red';
+			    searched = 1;
+			  }
+			  i++;
+			}
+			var timer4 = setInterval(onback,500);  //遍历数组元素
+		}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>星星评分</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="content">
+    <p class="title">半颗星评分</p>
+    <div id="startone"  class="block clearfix" >
+          <div class="star_score"></div>
+          <p style="float:left;">您的评分：<span class="fenshu"></span> 分</p>
+          <div class="attitude"></div>
+    </div>
+
+
+
+
+    <p class="title">1颗星评分</p>
+    <div id="starttwo" class="block clearfix">
+        <div  class="star_score"></div>
+        <p style="float:left;">您的评分：<span class="fenshu"></span> 分</p>
+    </div>
+
+
+
+
+    <script type="text/javascript" src='js/jquery-1.8.0.min.js'></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+     scoreFun($("#startone"))
+     scoreFun($("#starttwo"),{
+           fen_d:22,//每一个a的宽度
+           ScoreGrade:5//a的个数 10或者
+         })
+    </script>
+
+
+
+
+
+
+
+    <p class="title">分数展示</p>
+    <ul class="show_number clearfix">
+       <li>
+        <div class="atar_Show">
+          <p tip="2.5"></p>
+        </div>
+        <span></span>
+       </li>
+       <li>
+        <div class="atar_Show">
+          <p tip="3.5"></p>
+        </div>
+        <span></span>
+       </li>
+       <li>
+        <div class="atar_Show">
+          <p tip="5"></p>
+        </div>
+        <span></span>
+       </li>
+    </ul>
+    <script>
+    //显示分数
+      $(".show_number li p").each(function(index, element) {
+        var num=$(this).attr("tip");
+        var www=num*2*16;//
+        $(this).css("width",www);
+        $(this).parent(".atar_Show").siblings("span").text(num+"分");
+    });
+    </script>
+  </div>
+</body>
+</html>

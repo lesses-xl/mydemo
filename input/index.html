@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="guize">
+        校验规则
+        <ol>
+            <li>表单获得焦点时，下方显示表单填写规则</li>
+            <li>校验结果正确时，表单边框显示绿色，并在下方显示验证通过的描述文字</li>
+            <li>校验结果错误时，表单边框显示红色，并在下方显示验证错误的描述文字</li>
+            <li>点击提交按钮时，对页面中所有输入进行校验，校验结果显示方式同上。</li>
+            <li>若所有表单校验通过，弹窗显示“提交成功”，否则显示“提交失败”</li>
+        </ol>
+    </div>
+    <label for=""><span class="name">名称</span>
+        <input type="text" name="" value="">
+        <span class="test"></span>
+    </label>
+    <br>
+    <label for=""><span class="name">密码</span> 
+        <input type="password" name="" value="">
+        <span class="test"></span>
+    </label>
+    <br>
+    <label for=""><span class="name">密码确认</span> 
+        <input type="password" name="" value="">
+        <span class="test"></span>
+    </label>
+    <br>
+    <label for=""><span class="name">邮箱</span> 
+        <input type="mail" name="" value="">
+        <span class="test"></span>
+    </label>
+    <br>
+    <label for=""><span class="name">手机</span> 
+        <input type="text" name="" value="">
+        <span class="test"></span>
+    </label>
+    <button type="" id="btn">提交</button>
+    
+    <script type="text/javascript" src='js/main.js'></script>
+</body>
+
+</html>

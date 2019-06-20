@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IFE JavaScript Task 08</title>
+  <style>
+    div{
+      border:2px solid black;
+      display: flex;
+      padding: 10px 5px;
+      margin: 5px;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div>aaaa
+    <div>bbb
+      <div>bbb
+        <div>fff
+          <div>hhh</div>
+          <div>ggg</div>
+          <div>qwe</div>
+          <div>ggg</div>
+        </div>
+        <div>apple
+          <div>12</div>
+          <div>123</div>
+          <div>234</div>
+        </div>
+      </div>
+      <div>flex
+        <div>HTML</div>
+        <div>
+          <div>code</div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>box
+        <div>CSS</div>
+        <div>
+          <div>css</div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div>java</div>
+        </div>
+      </div>
+      <div>
+        <div>flash
+          <div></div>
+          <div></div>
+        </div>
+        <div>javascript</div>
+        <div>
+          <div>dema</div>
+          <div></div>
+        </div>
+        <div>地下城</div>
+      </div>
+      <div>dnf</div>
+    </div>
+    <div></div>
+  </div><br />
+  <input type="button" value="前序遍历" />
+  <input type="button" value="后序遍历" />
+  <input type="text" />
+  <input type="button" value="前序查询" />
+  <input type="button" value="后序查询" />
+  <script>
+    var oDivs = [];
+    var divs = document.getElementsByTagName('div');
+    var oBtns = document.getElementsByTagName('input');
+    function pre(node){    //前序遍历
+      if (node != null) {
+        oDivs.push(node);
+        for (var i = 0; i < node.children.length; i++) {
+          pre(node.children[i]);
+        }
+      }
+    }
+    function las(node){   //后序遍历
+      if (node != null) {
+        for (var i = 0; i < node.children.length; i++) {
+          las(node.children[i]);
+        }
+        oDivs.push(node);
+      }
+    }
+    oBtns[0].onclick = function(){      //前序遍历按钮
+      oDivs = [];
+      pre(divs[0]);
+      var i = 0;
+      function onPre(){           //显示单个数组元素
+        if (oDivs[i-1]) oDivs[i-1].style.backgroundColor = 'white';
+        if (i == oDivs.length) {
+          clearInterval(setOnPre);
+          return false;
+        }
+        oDivs[i].style.backgroundColor = 'blue';
+        i++;
+      }
+      var setOnPre = setInterval(onPre,1000);  //遍历数组元素
+    }
+    oBtns[1].onclick = function(){      //后序遍历
+      oDivs = [];
+      las(divs[0]);
+      var i = 0;
+      function onLas(){               //显示单个数组元素
+        if (oDivs[i-1]) oDivs[i-1].style.backgroundColor = 'white';
+        if (i == oDivs.length) {
+          clearInterval(setOnLas);
+          return false;
+        }
+        oDivs[i].style.backgroundColor = 'blue';
+        i++;
+      }
+      var setOnLas = setInterval(onLas,1000); //遍历数组元素
+    }
+    oBtns[3].onclick = function(){      //前序查询
+      oDivs = [];
+      pre(divs[0]);
+      var i = 0;
+      var searched = 0;
+      function onPre(){           //显示单个数组元素
+        if (oDivs[i-1] && oDivs[i-1].style.backgroundColor == 'blue') {
+          oDivs[i-1].style.backgroundColor = 'white';
+        }
+        if (i == oDivs.length) {
+          clearInterval(setOnPre);
+          if (searched == 0) {
+            alert('无结果');
+          }
+          return false;
+        }
+        oDivs[i].style.backgroundColor = 'blue';
+        if (oDivs[i].firstChild&&oBtns[2].value&&oDivs[i].firstChild.nodeValue.indexOf(oBtns[2].value) > -1) {
+          oDivs[i].style.backgroundColor = 'red';
+          searched = 1;
+        }
+        i++;
+      }
+      var setOnPre = setInterval(onPre,1000);  //遍历数组元素
+    }
+    oBtns[4].onclick = function(){      //后序查询
+      oDivs = [];
+      las(divs[0]);
+      var i = 0;
+      var searched = 0;
+      function onLas(){           //显示单个数组元素
+        if (oDivs[i-1] && oDivs[i-1].style.backgroundColor == 'blue') {
+          oDivs[i-1].style.backgroundColor = 'white';
+        }
+        if (i == oDivs.length) {
+          clearInterval(setOnLas);
+          if (searched == 0) {
+            alert('无结果');
+          }
+          return false;
+        }
+        oDivs[i].style.backgroundColor = 'blue';
+        if (oDivs[i].firstChild&&oBtns[2].value&&oDivs[i].firstChild.nodeValue.indexOf(oBtns[2].value) > -1) {
+          oDivs[i].style.backgroundColor = 'red';
+          searched = 1;
+        }
+        i++;
+      }
+      var setOnLas = setInterval(onLas,1000);  //遍历数组元素
+    }
+  </script>
+</body>
+</html>

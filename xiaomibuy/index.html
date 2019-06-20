@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo4</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			background: #f5f5f5;
+		}
+
+		.container {
+			width: 980px;
+			height: auto;
+			margin: 120px auto;
+		}
+		.top {
+			width: 980px;
+			height: 300px;
+		}
+
+		.top ul li {
+			list-style: none;
+			width: 235px;
+			height: 300px;
+			float: left;
+			background: white;
+			margin-right: 13px;
+			position: relative;
+		}
+
+		.top ul li:last-child {
+			margin-right: 0;
+		}
+
+		.top ul li img {
+			margin: 25px auto 30px auto;
+			width: 150px;
+			height: 150px;
+			display: block;
+			cursor: pointer;
+		}
+
+		.top ul li h3 {
+			font-weight: 400;
+			color: #333;
+			font-size: 14px;
+			background: white;
+			text-align: center;
+		}
+
+		.top ul li h4 {
+			font-weight: 400;
+			color: #ff6700;
+			font-size: 14px;
+			background: white;
+			text-align: center;
+			margin-top: 7px;
+		}
+
+		.top ul li h5 {
+			font-weight: 400;
+			color: #b0b0b0;
+			font-size: 14px;
+			background: white;
+			text-align: center;
+			margin-top: 12px;
+		}
+
+		.top ul li button {
+			height: 65px;
+			background: #ff6700;
+			width: 100%;
+			border: none;
+			position: absolute;
+			bottom: 0;
+			font-size: 20px;
+			color: white;
+			line-height: 65px;
+			cursor: pointer;
+			display: none;
+			outline: none;
+		}
+
+		.top ul li:hover button{
+			display: block;
+		}
+
+		.bottom {
+			width: 980px;
+			height: auto;
+			margin-top: 20px;
+			background: white;
+		}
+
+		.bottom .title {
+			width: 100%;
+			height: 70px;
+			background: white;
+			line-height: 70px;
+			border-bottom: 1px solid #e0e0e0;
+		}
+
+		.title .name {
+			width: 440px;
+			text-align: center;
+			float: left;
+			background: white;
+		}
+
+		.title .price {
+			width: 240px;
+			padding-left: 30px;
+			text-align: center;
+			float: left;
+			height: 100%;
+			background: white;
+			text-align: right;
+		}
+
+		.title .num {
+			height: 100%;
+			float: left;
+			width: 200px;
+			background: white;
+			text-align: center;
+		}
+
+		.title .close {
+			height: 100%;
+			float: left;
+			width: 50px;
+			background: white;
+			text-align: center;
+		}
+
+		.all {
+			width: 100%;
+			height: 70px;
+			background: white;
+			line-height: 70px;
+		}
+
+		.all .add {
+			height: 100%;
+			float: left;
+			width: 235px;
+			background: white;
+			text-align: center;
+		}
+
+		.all .allmoney {
+			height: 100%;
+			float: left;
+			width: 70px;
+			padding-left: 425px;
+			background: white;
+			text-align: center;
+		}
+
+		.all .allnum {
+			height: 100%;
+			float: left;
+			width: 160px;
+			background: white;
+			text-align: center;
+		}
+
+		.main ul li img {
+			vertical-align: top;
+			width: 80px;
+			height: 80px;
+			padding-left: 80px;
+			background: white;
+/* 			display: block;
+			padding-top: 10px; */
+			float: left;
+			margin-top: 10px;
+		}
+
+		.main ul li {
+			list-style: none;
+			border-bottom: 1px solid #e0e0e0;
+			background: white;
+			height: 100px;
+		}
+
+		.main ul li span {
+			display: inline-block;
+			float: left;
+			/* line-height: 100px; */
+			background: white;
+			margin-top: 40px;
+		}
+
+		.main ul li .one {
+			padding-left: 60px;
+			width: 425px;
+			font-size: 18px;
+			color: #666;
+		}
+
+		.main ul li .two {
+			width: 70px;
+			color: #ff6700;
+			font-size: 16px;
+			text-align: right;
+		}
+
+		.main ul li .three {
+			margin-left: 90px;
+			position: relative;
+		}
+
+		.main ul li .four {
+			margin-left: 110px;
+			margin-top: 40px;
+			width: 25px;
+			height: 25px;
+			text-align: center;
+			line-height: 25px;
+			cursor: pointer;
+			transition: all .3s;
+		}
+
+		.main ul li .four:hover {
+			background: #ff6700;
+			color: white;
+		}
+
+		.main .three span {
+			position: absolute;
+			top: -40px;
+			color: gray;
+			cursor: pointer;
+			display: none;
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			font-family: 'Microsoft YaHei';
+			/* font-size: 20px; */
+		}
+
+		.main .three .sub {
+			left: -19px;
+			font-size: 22px;
+			line-height: 22px;	
+			text-align: left;	
+		}
+
+		.main .three .add {
+			width: 18px;
+			right: -28px;
+			text-align: right;
+		}
+
+		.main .three span:hover {
+			color: black;
+		}
+
+		.main .three:hover span {
+			display: block;
+		}
+
+		.main .three .result {
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+			<ul id="info">
+				<li>
+					<img src="images/img01.jpg">
+					<h3>小米移动电源10000mAh</h3>
+					<h4>79元</h4>
+					<h5>18万人评价</h5>
+					<button>加入购物车</button>
+				</li>
+				<li>
+					<img src="images/img02.jpg">
+					<h3>小米移动电源10000mAh 高配版</h3>
+					<h4>149元</h4>
+					<h5>1.4万人评价</h5>
+					<button>加入购物车</button>
+				</li>
+				<li>
+					<img src="images/img03.jpg">
+					<h3>小米圈铁耳机</h3>
+					<h4>99元</h4>
+					<h5>4.2万人评价</h5>
+					<button>加入购物车</button>
+				</li>
+				<li>
+					<img src="images/img04.jpg">
+					<h3>小米活塞耳机 基础版</h3>
+					<h4>29元</h4>
+					<h5>3.6万人评价</h5>
+					<button>加入购物车</button>
+				</li>
+			</ul>
+		</div>
+		<div class="bottom">
+			<div class="title">
+				<div class="name">商品名称</div>
+				<div class="price">单价</div>
+				<div class="num">数量</div>
+				<div class="close">操作</div>
+			</div>
+			<div class="main">
+				<ul id="mybuy">
+<!-- 					<li>
+						<img src="file:///D:/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/vue2/mydemo/demo4/images/img04.jpg">
+						<span class="one">小米活塞耳机 基础版</span>
+						<span class="two">29元</span>
+						<span class="three"><span class="sub">-</span><span class="result">1</span><span class="add">+</span></span>
+						<span class="four">×</span>
+					</li> -->
+				</ul>
+			</div>
+			<div class="all">
+				<div class="add">总计</div>
+				<div class="allmoney" id="allmoney">0</div>
+				<div class="allnum" id="allnum">0</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src='main.js'></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+canvas {
+	display: block;
+	margin: 100px auto;
+	box-shadow: -2px -2px 2px #efefef, 5px 5px 5px #b9b9b9;
+}
+
+#btn {
+	width: 80px;
+	height: 30px;
+	border: 1px solid gray;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	transition: all .3s;
+	margin: -75px auto;
+	display: block;
+}
+
+#btn:hover {
+	background-color: gray;
+	color: white;
+}
