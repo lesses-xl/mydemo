@@ -1,6 +1,6 @@
 ### demo展示
 * [carousel](https://LittleChai.github.io/carousel)
-* [carousel](https://LittleChai.github.io/finalfour)
-* [carousel](https://LittleChai.github.io/hellola)
-* [carousel](https://LittleChai.github.io/drawpol)
-* [carousel](https://LittleChai.github.io/maze)
+* [finalfour](https://LittleChai.github.io/finalfour)
+* [hellola](https://LittleChai.github.io/hellola)
+* [drawpol](https://LittleChai.github.io/drawpol)
+* [maze](https://LittleChai.github.io/maze)
